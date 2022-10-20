@@ -1,0 +1,6 @@
+export default {
+    Login:"login",
+    Signup:"signup",
+    Example:"exp",
+    Home:"home"
+}
