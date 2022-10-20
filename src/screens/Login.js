@@ -94,7 +94,9 @@ export const Login = ({ navigation }) => {
       <SafeAreaView style={styles.AreaView}>
         <Stack flex={1}>
 
-          <ImageBackground source={require('../assets/images/background.jpeg.jpg')} style={{ width: '100%', height: '100%' }}>
+          <ImageBackground source={require('../assets/images/background.jpeg.jpg')} style={{ width: '100%', height: '100%' }} 
+              blurRadius={3}
+          >
 
 
             <Animatable.View
@@ -132,16 +134,16 @@ export const Login = ({ navigation }) => {
               duration={2000}
               iterationDelay={1}
               style={{
-                // borderWidth: 1,
+                borderWidth: 1,
                 flex: 1,
-                margin: "5%",
+                margin: "4%",
                 borderRadius: 10,
                 padding: "4%",
-                backgroundColor:"white",
-                elevation:35,
-                shadowColor:"gold"
-              }}
-
+                // backgroundColor:"white",
+                // elevation:5,
+                // shadowColor:"gold"
+              }}    
+              
             >
 
               <Stack space={8} w={'100%'}>
