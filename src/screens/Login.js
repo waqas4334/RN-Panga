@@ -94,8 +94,8 @@ export const Login = ({ navigation }) => {
       <SafeAreaView style={styles.AreaView}>
         <Stack flex={1}>
 
-          <ImageBackground source={require('../assets/images/background.jpeg.jpg')} style={{ width: '100%', height: '100%' }} 
-              blurRadius={3}
+          <ImageBackground source={require('../assets/images/background.jpeg.jpg')} style={{ width: '100%', height: '100%' }}
+            blurRadius={4}
           >
 
 
@@ -110,7 +110,7 @@ export const Login = ({ navigation }) => {
               }}
               animation="bounceIn"
               duration={3000}
-              delay={1000}
+              delay={500}
 
             >
 
@@ -130,20 +130,21 @@ export const Login = ({ navigation }) => {
 
 
             <Animatable.View
-              animation="fadeInUpBig"
+              animation="fadeInUp"
               duration={2000}
               iterationDelay={1}
               style={{
-                borderWidth: 1,
+                borderWidth: 2,
+                borderColor: colors.mainColor,
                 flex: 1,
                 margin: "4%",
-                borderRadius: 10,
+                borderRadius: 40,
                 padding: "4%",
-                // backgroundColor:"white",
-                // elevation:5,
-                // shadowColor:"gold"
-              }}    
-              
+                backgroundColor:"white",
+                // elevation:0.5,
+                // shadowColor:colors.mainColor
+              }}
+
             >
 
               <Stack space={8} w={'100%'}>
@@ -153,7 +154,7 @@ export const Login = ({ navigation }) => {
                 <Stack space={[4, 12]}>
                   <HStack space={2}>
                     <Box flexDirection="row" alignItems="flex-end">
-                      <Mail stroke="black" fill="#fff" width={25} height={25} />
+                      <Mail stroke="black" width={25} height={25} />
                     </Box>
                     <Input
                       variant="underlined"
@@ -179,7 +180,7 @@ export const Login = ({ navigation }) => {
                   </Stack>
                   <HStack space={2}>
                     <Box flexDirection="row" alignItems="flex-end">
-                      <Lock stroke="black" fill="#fff" width={25} height={25} />
+                      <Lock stroke="black" width={25} height={25} />
                     </Box>
                     <Input
                       type={show ? 'password' : 'text'}
@@ -269,13 +270,27 @@ export const Login = ({ navigation }) => {
                   </Center>
                 </Stack>
               </Stack>
-              <Flex flex={1} justify="flex-end" align="center">
-                <Box borderColor="white" style={styles.border}>
-                  <Text color={colors.mainColor} bold fontSize={['md', '2xl']}>
-                    FAQs and Operations Guide{' '}
-                  </Text>
-                </Box>
-              </Flex>
+              <Stack flex={1} justifyContent="flex-end" alignItems="center" >
+
+                <Text color={colors.mainColor} bold fontSize={['lg', '2xl']}
+
+                >
+                  FAQs and Operations Guide
+                </Text>
+
+                {/* <Text
+                  style={
+                    {
+                      //add line on bottom 
+                      borderTopColor: colors.mainColor,
+                      borderTopWidth: 1,
+                    }
+                  }
+                  color={colors.mainColor} bold fontSize={['lg', '2xl']}>
+                  Powered By Sync & Secure
+                </Text> */}
+
+              </Stack>
 
             </Animatable.View>
           </ImageBackground>

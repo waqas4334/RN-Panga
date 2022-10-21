@@ -245,12 +245,24 @@ export const Signup = ({ navigation }) => {
             duration={2000}
             iterationDelay={1}
             style={{
-              borderWidth: 1,
+borderColor:colors.mainColor,
+              shadowOffset: { width: 0, height: 0 },
+              shadowOpacity: 1,
+              shadowRadius: 10,
+              // elevation: 10,
+              shadowColor:colors.mainColor,
+              backgroundColor: colors.white,
+              borderWidth: 2,
               flex: 1,
               margin: "5%",
-              borderRadius: 10,
+              borderRadius: 30,
               padding: "4%",
-              // backgroundColor: "white",
+              // borderColor: colors.mainColor,
+            //blue neon effect on view 
+              
+      
+              
+            
               // elevation:35,
                 // shadowColor:"gold"
             }}
