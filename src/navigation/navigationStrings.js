@@ -2,5 +2,6 @@ export default {
     Login:"login",
     Signup:"signup",
     Example:"exp",
-    Home:"home"
+    Home:"home",
+    drawerMainPage:"App"
 }

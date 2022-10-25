@@ -1,8 +1,20 @@
 import * as React from 'react';
 import { NativeBaseProvider, Box, HStack, VStack, Text, Pressable, Image, Center } from 'native-base';
+import { StyleSheet, View, StatusBar, SafeAreaView, ImageBackground } from 'react-native';
+import { colors } from '../assets/colors/colors';
+
 
 export const Example=()=> {
   return (
+    <>
+<View  style={{
+  flex: 1,
+  backgroundColor: '#ececec', 
+  justifyContent: 'center',
+  alignItems: 'center',
+}}>
+  
+
 
       <Box bg="black" py="6" px="5"  rounded="xl" width="90%" maxWidth="100%">
         <HStack justifyContent="space-between" >
@@ -27,6 +39,8 @@ export const Example=()=> {
         }} alt="Aang flying and surrounded by clouds" height="100%" rounded="full"  width="30%" />
         </HStack>
       </Box>
+</View>
+    </>
 
 )
 }

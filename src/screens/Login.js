@@ -95,7 +95,7 @@ export const Login = ({ navigation }) => {
         <Stack flex={1}>
 
           <ImageBackground source={require('../assets/images/background.jpeg.jpg')} style={{ width: '100%', height: '100%' }}
-            blurRadius={4}
+            blurRadius={5}
           >
 
 
@@ -140,7 +140,7 @@ export const Login = ({ navigation }) => {
                 margin: "4%",
                 borderRadius: 40,
                 padding: "4%",
-                backgroundColor:"white",
+                // backgroundColor:"white",
                 // elevation:0.5,
                 // shadowColor:colors.mainColor
               }}
