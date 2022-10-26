@@ -66,7 +66,7 @@ const App = () => {
         <StatusBar
 
 backgroundColor={colors.statusbar}
-          barStyle="light-content"/>
+          barStyle="dark-content"/>
         <RootNavigation />
 
       </NativeBaseProvider>

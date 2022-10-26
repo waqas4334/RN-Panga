@@ -70,7 +70,7 @@ export const SettingsPage = () => {
               }
               }
             >5%</Text>
-            <Select rounded={25} borderColor="blue" placeholderTextColor="blue.900" color="red.900" w="100" maxW="100%" accessibilityLabel="Set" placeholder="Set" _selectedItem={{
+            <Select  rounded={25}  borderColor="blue" placeholderTextColor="blue.900" color="red.900" w="100" maxW="100%" accessibilityLabel="Set" placeholder="Set" _selectedItem={{
               bg: "teal.900",
               endIcon: <CheckIcon size={5} />
             }} mt="1">
@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
     paddingHorizontal: wp('2%'),
-    paddingTop: hp('1%'),
+    paddingTop: '1%',
     // borderWidth: 1,
   }
 })
