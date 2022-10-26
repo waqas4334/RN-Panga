@@ -1,15 +1,19 @@
 //Auth Stack
-import{Login} from './Login'
-import{Signup} from './Signup'
+import { Login } from './Login'
+import { Signup } from './Signup'
 
 //Home Stack
-import{Example} from './Experiment'
+import { Example } from './Experiment'
 import Home from './Home'
-
-export default{
+import { SettingsPage } from './Settings'
+import {LandingPage} from './LandingPage'
+export default {
     Login,
     Signup,
     Example,
-    Home
+    Home,
+    SettingsPage,
+    LandingPage
+    
 
 }

@@ -19,12 +19,15 @@ import {
     User,
     Eye,
     EyeOff,
-    Settings,
+    Settings
 } from 'react-native-feather';
 import { Ionicons } from 'react-native-vector-icons/Ionicons';
 import { Example } from './Experiment';
 import { Login } from './Login';
 import { Signup } from './Signup';
+
+import { SettingsPage } from './Settings';
+import { LandingPage } from './LandingPage';
 const GensetHome = () => {
     const _renderIcon = (routeName, selectedTab) => {
 
@@ -37,7 +40,7 @@ const GensetHome = () => {
                         color={routeName === selectedTab ? 'blue' : 'gray'}
                     />
                     <Text>
-                        Monitering
+                        Home
                     </Text>
                 </>
 
@@ -96,7 +99,7 @@ const GensetHome = () => {
                             }}
                             onPress={() => Alert.alert('Click Action')}>
                             < Plus
-                                stroke="black"
+                                stroke="white"
                                 fill="#fff"
                                 width={25}
                                 height={25}
@@ -109,14 +112,13 @@ const GensetHome = () => {
                     options={{ headerShown: false }}
                     name="Monitering"
                     position="LEFT"
-                    component={Example
+                    component={LandingPage
                      }
                 />
                 <CurvedBottomBar.Screen
                     options={{ headerShown: false }}
                     name="Setting"
-                    component={
-                        Signup}
+                    component={SettingsPage}
                     position="RIGHT"
                 />
             </CurvedBottomBar.Navigator>
@@ -139,7 +141,7 @@ export const styles = StyleSheet.create({
         borderRadius: 35,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'white',
+        backgroundColor: '#62a6ff',
         padding: 10,
         shadowColor: '#000',
         shadowOffset: {
@@ -148,7 +150,7 @@ export const styles = StyleSheet.create({
         },
         shadowOpacity: 0.2,
         shadowRadius: 1.41,
-        elevation: 1,
+        elevation: 2,
         bottom: 30,
     },
     imgCircle: {

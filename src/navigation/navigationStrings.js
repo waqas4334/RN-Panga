@@ -3,5 +3,6 @@ export default {
     Signup:"signup",
     Example:"exp",
     Home:"home",
-    drawerMainPage:"App"
+    drawerMainPage:"App",
+    SettingsPage:"setting",
 }
