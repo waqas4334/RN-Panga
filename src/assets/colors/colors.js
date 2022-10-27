@@ -31,7 +31,7 @@ export const colors = {
     darkBlue: '#00008B',
     textColor1: '#00008D',
     // statusbar:"#245fb5"
-    statusbar:"#d9e6ff",
-    headerBar:"#d9e6ff",
+    statusbar:"#bfefff",
+    headerBar:"#bfefff",
   
   };

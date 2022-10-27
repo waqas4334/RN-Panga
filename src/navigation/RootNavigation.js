@@ -52,14 +52,7 @@ const App = () => {
     </Drawer.Navigator>
   );
 }
-const Tab = () => {
-  return (
-    <Tab.Navigator>
-      <Tab.Screen name="Feed" component={Feed} />
-      <Tab.Screen name="Messages" component={Messages} />
-    </Tab.Navigator>
-  );
-}
+
 
 export const RootNavigation = () => {
   return (

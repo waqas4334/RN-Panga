@@ -31,7 +31,7 @@
 //   const [hobby1, hobby2] = hobbies;
 //   console.log(hobby1, hobby2);
 
- 
+
 //   return (
 //     <View style={styles.container}>
 //       <Text> waqas</Text>
@@ -55,21 +55,21 @@ import { RootNavigation } from './src/navigation/RootNavigation'
 import { NativeBaseProvider, Text, Box } from "native-base";
 import { View, ActivityIndicator, StyleSheet, StatusBar } from 'react-native';
 // import { Provider } from 'react-redux'
-import {colors}  from './src/assets/colors/colors'
+import { colors } from './src/assets/colors/colors'
 // import store from './src/store/store'
 
 
 const App = () => {
   return (<>
     {/* <Provider store={store}> */}
-      <NativeBaseProvider>
-        <StatusBar
+    <NativeBaseProvider>
+      <StatusBar
 
-backgroundColor={colors.statusbar}
-          barStyle="dark-content"/>
-        <RootNavigation />
+        backgroundColor={colors.statusbar}
+        barStyle="dark-content" />
+      <RootNavigation />
 
-      </NativeBaseProvider>
+    </NativeBaseProvider>
     {/* </Provider> */}
   </>
   )
