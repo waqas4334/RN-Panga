@@ -17,17 +17,17 @@ import {
   Button,
   ScrollView,
   Image,
-  Text,
+
   HStack,
   VStack,
   Flex,
   Icon,
-  Tooltip, Avatar
+  Tooltip, Avatar, Switch, Text, Fab
 } from 'native-base';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Card } from '@rneui/base';
 import { CardTitle } from '@rneui/base/dist/Card/Card.Title';
-
+import { AntDesign, MaterialIcons } from "@expo/vector-icons";
 
 import {
   Lock,
@@ -42,6 +42,7 @@ import {
   Settings,
   Thermometer
 } from 'react-native-feather';
+import { colors } from '../assets/colors/colors';
 export const SettingsPage = () => {
   return (
 
@@ -49,18 +50,18 @@ export const SettingsPage = () => {
       flex: 1,
       // borderWidth: 1,
       // borderColor: 'red',
-      backgroundColor: '#bfefff',
+      backgroundColor: colors.background,
 
     }}>
 
 
 
-      <Card  
+      <Card
         containerStyle={{ marginLeft: 0, borderTopEndRadius: 10, borderTopEndRadius: 15, borderBottomEndRadius: 15, }}>
         <CardTitle>
           Temperature (Upper Threshold)
         </CardTitle>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
           <Text fontSize={30} style={{ color: '#0094CD', fontWeight: 'bold' }}>
             5 %
           </Text>
@@ -115,7 +116,30 @@ export const SettingsPage = () => {
       </Card>
 
 
+      <View style={{
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        // borderWidth: 1,
 
+
+      }}>
+
+        <View style={{
+          justifyContent: 'center',
+        }} >
+          <Text bold fontSize='17'  > Routine: </Text>
+        </View>
+        <View  >
+          <Switch onPress={()=>{}} size="md" offTrackColor="red.900" onTrackColor="green.900" />
+        </View>
+
+      </View>
+
+      <View style={[{}]}>
+        <Fab renderInPortal={false} shadow={2}  placement="top-left" size="xs" icon={<Icon color="white" as={AntDesign} name="addfile" size="4" />} label="Add Routine" />
+
+
+      </View>
 
     </View>
   )

@@ -24,14 +24,19 @@ export const colors = {
     green: '#6DD0A3',
     yellow: '#FFC247',
     textInputColor: '#FFFFFF',
-    background: '#FFFFFF',
     // mainGrey: '#1C2120',
     // mainColor: '#004282',
     mainColor: '#004282',
     darkBlue: '#00008B',
     textColor1: '#00008D',
-    // statusbar:"#245fb5"
-    statusbar:"#bfefff",
-    headerBar:"#bfefff",
-  
+    statusbar:"#ffffff",
+    // statusbar:"#0094cd",
+    // headerBar:"#bfefff",
+    headerBar:"#ffffffff",
+    tabBar:"#ffffffff",
+    // background: '#0471A6',
+    background: '#0686a4',
+    plusButton: '#0B2545',
+ 
+    
   };

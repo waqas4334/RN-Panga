@@ -28,6 +28,7 @@ import { Signup } from './Signup';
 
 import { SettingsPage } from './Settings';
 import { LandingPage } from './LandingPage';
+import { colors } from '../assets/colors/colors';
 const GensetHome = () => {
     const _renderIcon = (routeName, selectedTab) => {
 
@@ -141,16 +142,16 @@ export const styles = StyleSheet.create({
         borderRadius: 35,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#62a6ff',
+        backgroundColor: colors.plusButton,
         padding: 10,
-        shadowColor: '#000',
+        shadowColor: '#0000',
         shadowOffset: {
             width: 0,
             height: 0.5,
         },
         shadowOpacity: 0.2,
         shadowRadius: 1.41,
-        elevation: 2,
+        elevation: 25,
         bottom: 30,
     },
     imgCircle: {

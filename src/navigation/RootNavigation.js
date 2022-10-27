@@ -24,8 +24,9 @@ const App = () => {
       <Drawer.Screen name="Home" component={Screens.Home} options={
         {
           headerTitle: 'Geysital Home',
+          
           headerTitleAlign: 'center',
-          headerTintColor: "#2563eb",
+          headerTintColor: colors.plusButton,
           headerStyle: {
             backgroundColor: colors.headerBar
           },
@@ -36,8 +37,7 @@ const App = () => {
               <Bell
                 // name={icon}
                 size={25}
-                color="#2563eb"
-              />
+                color= {colors.plusButton}             />
             </View>
           )
         }
