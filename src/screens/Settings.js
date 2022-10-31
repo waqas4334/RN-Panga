@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
-import { StyleSheet, View, StatusBar, SafeAreaView, ImageBackground } from 'react-native';
+import React, { useState } from "react"
+import {
+  StyleSheet,
+  View,
+  StatusBar,
+  SafeAreaView,
+  ImageBackground,
+} from "react-native"
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
-} from 'react-native-responsive-screen';
+} from "react-native-responsive-screen"
 import {
   Select,
   CheckIcon,
@@ -17,17 +23,22 @@ import {
   Button,
   ScrollView,
   Image,
-
   HStack,
   VStack,
   Flex,
   Icon,
-  Tooltip, Avatar, Switch, Text, Fab
-} from 'native-base';
-import { LinearGradient } from 'expo-linear-gradient';
-import { Card } from '@rneui/base';
-import { CardTitle } from '@rneui/base/dist/Card/Card.Title';
-import { AntDesign, MaterialIcons } from "@expo/vector-icons";
+  Tooltip,
+  Avatar,
+  Switch,
+  Text,
+  Fab,
+} from "native-base"
+
+import { LinearGradient } from "expo-linear-gradient"
+import { Card } from "@rneui/base"
+import { CardTitle } from "@rneui/base/dist/Card/Card.Title"
+import { AntDesign, MaterialIcons, Ionicons } from "@expo/vector-icons"
+import ModalDropdown from "react-native-modal-dropdown"
 
 import {
   Lock,
@@ -40,142 +51,284 @@ import {
   Eye,
   EyeOff,
   Settings,
-  Thermometer
-} from 'react-native-feather';
-import { colors } from '../assets/colors/colors';
+  Thermometer,
+} from "react-native-feather"
+import { colors } from "../assets/colors/colors"
+import { List } from "react-native-paper"
+
 export const SettingsPage = () => {
+  const [expanded, setExpanded] = React.useState(true)
+
+  const handlePress = () => setExpanded(!expanded)
+  const [service, setService] = useState("Select Service")
+
   return (
-
-    <View style={{
-      flex: 1,
-      // borderWidth: 1,
-      // borderColor: 'red',
-      backgroundColor: colors.background,
-
-    }}>
-
-
-
+    <LinearGradient
+      // Button Linear Gradient
+      colors={["#2756ac", "#1788d9", "#2756ac"]}
+      style={{
+        flex: 1,
+      }}>
       <Card
-        containerStyle={{ marginLeft: 0, borderTopEndRadius: 10, borderTopEndRadius: 15, borderBottomEndRadius: 15, }}>
-        <CardTitle>
-          Temperature (Upper Threshold)
-        </CardTitle>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Text fontSize={30} style={{ color: '#0094CD', fontWeight: 'bold' }}>
+        containerStyle={{
+          marginLeft: 0,
+          borderTopEndRadius: 10,
+          borderTopEndRadius: 15,
+          borderBottomEndRadius: 15,
+        }}>
+        <CardTitle>Temperature (Upper Threshold)</CardTitle>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}>
+          <Text fontSize={30} style={{ color: "#0094CD", fontWeight: "bold" }}>
             5 %
           </Text>
-          <Select rounded={25} borderColor="#0094cd" borderWidth={2} placeholderTextColor="blue.900" color="red.900" w="100" maxW="100%" accessibilityLabel="Set" placeholder="Set" _selectedItem={{
-            bg: "teal.900",
-            endIcon: <CheckIcon size={4} />
-          }} mt="1">
+          <Select
+            rounded={25}
+            borderColor="#0094cd"
+            borderWidth={2}
+            placeholderTextColor="blue.900"
+            color="red.900"
+            w="100"
+            maxW="100%"
+            accessibilityLabel="Set"
+            placeholder="Set"
+            _selectedItem={{
+              bg: "teal.900",
+              endIcon: <CheckIcon size={4} />,
+            }}
+            mt="1">
             <Select.Item label="UX Research" value="ux" />
             <Select.Item label="UX Research" value="ux" />
             <Select.Item label="UX Research" value="ux" />
-
           </Select>
-
 
           <LinearGradient
             // Button Linear Gradient
-            colors={['#ffa500', '#402a00']}
+            colors={["#ffa500", "#402a00"]}
             style={{
               borderRadius: 20,
               padding: 5,
-            }}
-          >
+            }}>
             <Thermometer
               // name={icon}
               size={15}
               color="white"
             />
           </LinearGradient>
-
         </View>
-
       </Card>
 
-
       <Card
-        containerStyle={{ marginLeft: 0, borderTopEndRadius: 10, borderTopEndRadius: 15, borderBottomEndRadius: 15 }}>
-        <CardTitle >
-          Modes
-        </CardTitle>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-
-          <Button.Group isAttached colorScheme="blue" mx={{
-            base: "auto",
-            md: 0
-          }} size="sm">
+        containerStyle={{
+          marginLeft: 0,
+          borderTopEndRadius: 10,
+          borderTopEndRadius: 15,
+          borderBottomEndRadius: 15,
+        }}>
+        <CardTitle>Modes</CardTitle>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}>
+          <Button.Group
+            isAttached
+            colorScheme="blue"
+            mx={{
+              base: "auto",
+              md: 0,
+            }}
+            size="sm">
             <Button>GAS</Button>
             <Button variant="solid">Hybrid</Button>
             <Button variant="outline">Electric</Button>
           </Button.Group>
         </View>
-
       </Card>
 
-
-      <View style={{
-        flexDirection: 'row',
-        justifyContent: 'flex-end',
-        // borderWidth: 1,
-
-
-      }}>
-
-        <View style={{
-          justifyContent: 'center',
-        }} >
-          <Text bold fontSize='17'  > Routine: </Text>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "flex-end",
+          // borderWidth: 1,
+        }}>
+        <View
+          style={{
+            justifyContent: "center",
+          }}>
+          <Text bold fontSize="17" color={"white"}>
+            {" "}
+            Routine:{" "}
+          </Text>
         </View>
-        <View  >
-          <Switch onPress={()=>{}} size="md" offTrackColor="red.900" onTrackColor="green.900" />
+        <View>
+          <View>
+            <Switch
+              onPress={() => {}}
+              size="lg"
+              offTrackColor="red.900"
+              onTrackColor="green.900"
+            />
+          </View>
         </View>
-
       </View>
 
-      <View style={[{}]}>
-        <Fab renderInPortal={false} shadow={2}  placement="top-left" size="xs" icon={<Icon color="white" as={AntDesign} name="addfile" size="4" />} label="Add Routine" />
-
-
+      <View
+        style={[
+          {
+            // borderWidth: 1,
+            flexDirection: "row",
+            paddingLeft: "5%",
+          },
+        ]}>
+        <Button
+          variant={"solid"}
+          style={{
+            backgroundColor: "#e93a39",
+          }}
+          onPress={() => alert("waqas")}
+          leftIcon={<Icon as={AntDesign} name="addfile" size="sm" />}>
+          Add Routine
+        </Button>
       </View>
 
-    </View>
+      <View
+        style={[
+          {
+            padding: "5%",
+            // borderWidth: 1,
+          },
+        ]}>
+        <List.Section>
+          <List.Accordion
+            // title="Set Routine on/off"
+            // titleStyle={{
+            //   color: "black",
+            //   fontWeight: "bold",
+            //   alignSelf: "center",
+            // }}
+            onPress={handlePress}
+            expanded={expanded}
+            left={props => (
+              <Text bold fontSize={18}>
+                Set Routine On/Off -1
+              </Text>
+            )}
+            right={props => (
+              <View
+                style={[
+                  {
+                    // borderWidth: 1,
+                    flexDirection: "row",
+                  },
+                ]}>
+                <Text
+                  bold
+                  fontSize={20}
+                  style={{ textAlignVertical: "center" }}
+                  color="red.700">
+                  60° C
+                </Text>
+                <Button
+                  ml={5}
+                  variant="solid"
+                  bgColor="green.900"
+                  size={"xs"}
+                  onPress={() => console.log("hello world")}>
+                  On
+                </Button>
+              </View>
+            )}></List.Accordion>
+          <View
+            style={[
+              {
+                backgroundColor: "white",
+                // borderWidth: 1,
+                flexDirection: "row",
+                padding: "2%",
+              },
+            ]}>
+            <Select
+              height={"8"}
+              selectedValue={service}
+              borderColor="#0094cd"
+              borderWidth={2}
+              placeholderTextColor="blue.900"
+              minWidth="60"
+              w={140}
+              accessibilityLabel="Choose Service"
+              placeholder="Set Threshold"
+              _selectedItem={{
+                bg: "teal.600",
+                endIcon: <CheckIcon size="5" />,
+              }}
+              mt={1}
+              onValueChange={itemValue => setService(itemValue)}>
+              <Select.Item label="UX Research" value="ux" />
+              <Select.Item label="Web Development" value="web" />
+              <Select.Item label="Cross Platform Development" value="cross" />
+              <Select.Item label="UI Designing" value="ui" />
+              <Select.Item label="Backend Development" value="backend" />
+            </Select>
+            <View
+              style={[
+                {
+                  flexDirection: "row",
+                  justifyContent: "space-evenly",
+                  flex: 1,
+                },
+              ]}>
+              <Text bold>From: 14:34 </Text>
+              <Text bold>To: 15:56 </Text>
+            </View>
+            {/* <View
+              style={[
+                {
+                  borderWidth: 1,
+                },
+              ]}>
+              <Switch
+                onPress={() => {}}
+                size="md"
+                offTrackColor="red.900"
+                onTrackColor="green.900"
+              />
+            </View> */}
+          </View>
+        </List.Section>
+      </View>
+    </LinearGradient>
   )
 }
 
-
 const styles = StyleSheet.create({
-
   cardThreshold: {
-    height: '17%',
-    width: '90%',
+    height: "17%",
+    width: "90%",
     borderWidth: 1,
     borderRadius: 10,
-    backgroundColor: 'white',
-    marginTop: hp('2%'),
-
-
-
-
+    backgroundColor: "white",
+    marginTop: hp("2%"),
   },
   cardstext: {
-    fontWeight: 'bold',
-    color: 'black',
-    textAlign: 'center',
+    fontWeight: "bold",
+    color: "black",
+    textAlign: "center",
     fontSize: 16,
     // borderWidth: 1,
-
   },
   cardThresholdInner: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    paddingHorizontal: wp('2%'),
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    paddingHorizontal: wp("2%"),
     // paddingTop: '1%',
-    padding: '3%',
+    padding: "3%",
     borderWidth: 1,
-
-  }
+  },
 })
