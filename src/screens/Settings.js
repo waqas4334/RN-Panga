@@ -61,7 +61,6 @@ export const SettingsPage = () => {
 
   const handlePress = () => setExpanded(!expanded)
   const [service, setService] = useState("Select Service")
-
   return (
     <LinearGradient
       // Button Linear Gradient
