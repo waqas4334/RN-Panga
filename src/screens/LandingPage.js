@@ -1,6 +1,6 @@
 import React from "react"
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs"
-import screens from "../screens"
+import screens from "./index"
 import { colors } from "../assets/colors/colors"
 
 // import ProgressCircle from 'react-native-progress-circle';
@@ -32,7 +32,7 @@ const Tab = createMaterialTopTabNavigator()
 export const LandingPage = () => {
   return (
     <Tab.Navigator
-      initialRouteName="settings"
+      initialRouteName="Home"
       screenOptions={{
         tabBarStyle: { backgroundColor: colors.tabBar },
         tabBarLabelStyle: { color: colors.plusButton },

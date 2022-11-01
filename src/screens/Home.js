@@ -25,9 +25,8 @@ import { Ionicons } from "react-native-vector-icons/Ionicons"
 import { Example } from "./Experiment"
 import { Login } from "./Login"
 import { Signup } from "./Signup"
+import screens from "./index"
 
-import { SettingsPage } from "./Settings"
-import { LandingPage } from "./LandingPage"
 import { colors } from "../assets/colors/colors"
 const GensetHome = () => {
   const _renderIcon = (routeName, selectedTab) => {
@@ -100,12 +99,12 @@ const GensetHome = () => {
           options={{ headerShown: false }}
           name="Monitering"
           position="LEFT"
-          component={LandingPage}
+          component={screens.LandingPage}
         />
         <CurvedBottomBar.Screen
           options={{ headerShown: false }}
           name="Setting"
-          component={SettingsPage}
+          component={screens.SettingsPage}
           position="RIGHT"
         />
       </CurvedBottomBar.Navigator>

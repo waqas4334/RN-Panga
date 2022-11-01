@@ -14,9 +14,10 @@ import { LinearGradient } from "expo-linear-gradient"
 import { colors } from "../assets/colors/colors"
 // import ProgressCircle from "react-native-progress-circle"
 // import { AnimatedCircularProgress } from "react-native-circular-progress"
-// import CircularProgress from "react-native-circular-progress-indicator"
+import CircularProgress from "react-native-circular-progress-indicator"
 
 export const GensetHome = () => {
+  const degreeText = "80"
   return (
     <>
       {/* <View
@@ -29,7 +30,7 @@ export const GensetHome = () => {
 
       <LinearGradient
         // Button Linear Gradient
-        colors={["#2756ac", "#1788d9", "#2756ac"]}
+        colors={["#1788d9", "#2756ac", "#1788d9"]}
         style={{
           flex: 1,
         }}>
@@ -140,6 +141,21 @@ export const GensetHome = () => {
               bgColor="#fff">
               <Text style={{ fontSize: 18 }}>{"30%"}</Text>
             </ProgressCircle> */}
+            {/* <CircularProgress
+              value={degreeText}
+              activeStrokeWidth={10}
+              progressValueColor={"#ecf0f1"}
+              inActiveStrokeWidth={25}
+              activeStrokeColor={colors.orange}
+            /> */}
+            <CircularProgress
+              value={80}
+              activeStrokeColor={"#e87c13"}
+              activeStrokeSecondaryColor={"#a50606"}
+              inActiveStrokeColor={"transparent"}
+              colotit
+              activeStrokeWidth={13}
+            />
           </View>
           <View style={{ flexDirection: "row" }}>
             <Card
@@ -241,7 +257,7 @@ export const GensetHome = () => {
                     justifyContent: "center",
                     alignItems: "center",
                   }}>
-                  <Thermometer stroke={"white"} />
+                  <Thermometer stroke={"black"} />
                   {/* <Image source={volve} style={{height: 30, width: 30}} /> */}
                 </LinearGradient>
               </View>

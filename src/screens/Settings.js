@@ -65,7 +65,7 @@ export const SettingsPage = () => {
   return (
     <LinearGradient
       // Button Linear Gradient
-      colors={["#2756ac", "#1788d9", "#2756ac"]}
+      colors={["#1788d9", "#2756ac", "#1788d9"]}
       style={{
         flex: 1,
       }}>
