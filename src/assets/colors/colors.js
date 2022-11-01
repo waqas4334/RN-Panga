@@ -38,6 +38,7 @@ export const colors = {
   background: "coral",
   plusButton: "#245fb4",
   // plusButtonReal: "#a50606",
-  plusButtonReal: "#a34809",
+  plusButtonReal: "#cf2625",
   orange: "#ea4335",
+  modesColor: "#0094cd",
 }

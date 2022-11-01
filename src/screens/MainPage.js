@@ -148,130 +148,42 @@ export const GensetHome = () => {
               inActiveStrokeWidth={25}
               activeStrokeColor={colors.orange}
             /> */}
-            <CircularProgress
-              value={80}
-              activeStrokeColor={"#e87c13"}
-              activeStrokeSecondaryColor={"#a50606"}
-              inActiveStrokeColor={"transparent"}
-              colotit
-              activeStrokeWidth={13}
-            />
+            <View
+              style={[
+                {
+                  marginRight: "6%",
+                },
+              ]}>
+              <CircularProgress
+                value={60}
+                activeStrokeColor={"#e87c13"}
+                activeStrokeSecondaryColor={"#a50606"}
+                inActiveStrokeColor={"#ffff"}
+                inActiveStrokeOpacity={0.1}
+                colotit
+                activeStrokeWidth={12}
+                radius={heightPercentageToDP("9%")}
+                progressValueColor={"#e87c13"}
+              />
+            </View>
           </View>
-          <View style={{ flexDirection: "row" }}>
-            <Card
-              containerStyle={{
-                borderRadius: 10,
-                elevation: 5,
-                width: 190,
-                marginLeft: 10,
-              }}>
-              <Text style={{ fontWeight: "bold", fontSize: 18 }}>
-                Geyser Status
-              </Text>
-              <View
-                style={{
-                  flexDirection: "row",
-                  justifyContent: "space-between",
-                  alignItems: "center",
+
+          <View
+            style={[
+              {
+                marginTop: "5%",
+              },
+            ]}>
+            <View style={{ flexDirection: "row" }}>
+              <Card
+                containerStyle={{
+                  borderRadius: 10,
+                  elevation: 5,
+                  width: 190,
+                  marginLeft: 10,
                 }}>
-                <Text style={{ fontWeight: "bold", fontSize: 16 }}>On</Text>
-
-                <View
-                  style={{
-                    borderRadius: 100,
-                    height: 40,
-                    width: 40,
-                    justifyContent: "center",
-                    alignItems: "center",
-                    backgroundColor: "green",
-                    borderRadius: 100,
-                  }}>
-                  <Power stroke={"white"} />
-
-                  {/* <Image source={volve} style={{height: 30, width: 30}} /> */}
-                </View>
-              </View>
-            </Card>
-
-            <Card
-              containerStyle={{
-                borderRadius: 10,
-                elevation: 5,
-                width: 160,
-                marginLeft: 0,
-              }}>
-              <Text style={{ fontWeight: "bold", fontSize: 18 }}>
-                Gas Valve
-              </Text>
-              <View
-                style={{
-                  flexDirection: "row",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}>
-                <Text style={{ fontWeight: "bold", fontSize: 16 }}>On</Text>
-
-                <LinearGradient
-                  colors={["#9f4208", "#ffdf2a"]}
-                  style={{
-                    borderRadius: 100,
-                    height: 40,
-                    width: 40,
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}>
-                  <Image source={volve} style={{ height: 30, width: 30 }} />
-                </LinearGradient>
-              </View>
-            </Card>
-          </View>
-          <View style={{ flexDirection: "row", marginLeft: 4 }}>
-            <Card
-              containerStyle={{
-                borderRadius: 10,
-                elevation: 15,
-                height: 100,
-                width: 160,
-                marginRight: 0,
-              }}>
-              <Text style={{ fontWeight: "bold", fontSize: 18 }}>
-                Temperature
-              </Text>
-              <View
-                style={{
-                  flexDirection: "row",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}>
-                <Text style={{ fontWeight: "bold", fontSize: 16 }}>
-                  {" "}
-                  26 ° C
-                </Text>
-
-                <LinearGradient
-                  colors={["#9f4208", "#ffdf2a"]}
-                  style={{
-                    borderRadius: 100,
-                    height: 40,
-                    width: 40,
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}>
-                  <Thermometer stroke={"black"} />
-                  {/* <Image source={volve} style={{height: 30, width: 30}} /> */}
-                </LinearGradient>
-              </View>
-            </Card>
-            <Card
-              containerStyle={{
-                borderRadius: 10,
-                elevation: 15,
-                height: 100,
-                width: 190,
-              }}>
-              <View>
                 <Text style={{ fontWeight: "bold", fontSize: 18 }}>
-                  Burner Status
+                  Geyser Status
                 </Text>
                 <View
                   style={{
@@ -280,6 +192,42 @@ export const GensetHome = () => {
                     alignItems: "center",
                   }}>
                   <Text style={{ fontWeight: "bold", fontSize: 16 }}>On</Text>
+
+                  <View
+                    style={{
+                      borderRadius: 100,
+                      height: 40,
+                      width: 40,
+                      justifyContent: "center",
+                      alignItems: "center",
+                      backgroundColor: "green",
+                      borderRadius: 100,
+                    }}>
+                    <Power stroke={"white"} />
+
+                    {/* <Image source={volve} style={{height: 30, width: 30}} /> */}
+                  </View>
+                </View>
+              </Card>
+
+              <Card
+                containerStyle={{
+                  borderRadius: 10,
+                  elevation: 5,
+                  width: 160,
+                  marginLeft: 0,
+                }}>
+                <Text style={{ fontWeight: "bold", fontSize: 18 }}>
+                  Gas Valve
+                </Text>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}>
+                  <Text style={{ fontWeight: "bold", fontSize: 16 }}>On</Text>
+
                   <LinearGradient
                     colors={["#9f4208", "#ffdf2a"]}
                     style={{
@@ -289,11 +237,84 @@ export const GensetHome = () => {
                       justifyContent: "center",
                       alignItems: "center",
                     }}>
-                    <Image source={burner} style={{ height: 30, width: 30 }} />
+                    <Image source={volve} style={{ height: 30, width: 30 }} />
                   </LinearGradient>
                 </View>
-              </View>
-            </Card>
+              </Card>
+            </View>
+            <View style={{ flexDirection: "row", marginLeft: 4 }}>
+              <Card
+                containerStyle={{
+                  borderRadius: 10,
+                  elevation: 15,
+                  height: 100,
+                  width: 160,
+                  marginRight: 0,
+                }}>
+                <Text style={{ fontWeight: "bold", fontSize: 18 }}>
+                  Temperature
+                </Text>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}>
+                  <Text style={{ fontWeight: "bold", fontSize: 16 }}>
+                    {" "}
+                    26 ° C
+                  </Text>
+
+                  <LinearGradient
+                    colors={["#9f4208", "#ffdf2a"]}
+                    style={{
+                      borderRadius: 100,
+                      height: 40,
+                      width: 40,
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}>
+                    <Thermometer stroke={"black"} />
+                    {/* <Image source={volve} style={{height: 30, width: 30}} /> */}
+                  </LinearGradient>
+                </View>
+              </Card>
+              <Card
+                containerStyle={{
+                  borderRadius: 10,
+                  elevation: 15,
+                  height: 100,
+                  width: 190,
+                }}>
+                <View>
+                  <Text style={{ fontWeight: "bold", fontSize: 18 }}>
+                    Burner Status
+                  </Text>
+                  <View
+                    style={{
+                      flexDirection: "row",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                    }}>
+                    <Text style={{ fontWeight: "bold", fontSize: 16 }}>On</Text>
+                    <LinearGradient
+                      colors={["#9f4208", "#ffdf2a"]}
+                      style={{
+                        borderRadius: 100,
+                        height: 40,
+                        width: 40,
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}>
+                      <Image
+                        source={burner}
+                        style={{ height: 30, width: 30 }}
+                      />
+                    </LinearGradient>
+                  </View>
+                </View>
+              </Card>
+            </View>
           </View>
         </View>
       </LinearGradient>

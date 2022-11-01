@@ -34,7 +34,9 @@ export const LandingPage = () => {
     <Tab.Navigator
       initialRouteName="Home"
       screenOptions={{
-        tabBarStyle: { backgroundColor: colors.tabBar },
+        tabBarStyle: {
+          backgroundColor: colors.tabBar,
+        },
         tabBarLabelStyle: { color: colors.plusButton },
       }}>
       <Tab.Screen name="Home" component={screens.GensetHome} />

@@ -83,12 +83,14 @@ export const SettingsPage = () => {
             justifyContent: "space-between",
             alignItems: "center",
           }}>
-          <Text fontSize={30} style={{ color: "#0094CD", fontWeight: "bold" }}>
+          <Text
+            fontSize={30}
+            style={{ color: colors.plusButton, fontWeight: "bold" }}>
             5 %
           </Text>
           <Select
-            rounded={25}
-            borderColor="#0094cd"
+            rounded={10}
+            borderColor={colors.plusButton}
             borderWidth={2}
             placeholderTextColor="blue.900"
             color="red.900"
@@ -138,7 +140,6 @@ export const SettingsPage = () => {
           }}>
           <Button.Group
             isAttached
-            colorScheme="blue"
             mx={{
               base: "auto",
               md: 0,
@@ -189,7 +190,7 @@ export const SettingsPage = () => {
         <Button
           variant={"solid"}
           style={{
-            backgroundColor: "#e93a39",
+            backgroundColor: colors.plusButtonReal,
           }}
           onPress={() => alert("waqas")}
           leftIcon={<Icon as={AntDesign} name="addfile" size="sm" />}>
@@ -215,9 +216,15 @@ export const SettingsPage = () => {
             onPress={handlePress}
             expanded={expanded}
             left={props => (
-              <Text bold fontSize={18}>
-                Set Routine On/Off -1
-              </Text>
+              <>
+                {expanded ? (
+                  <Text>SET ROUTINE ON/OFF -1</Text>
+                ) : (
+                  <Text bold fontSize={18}>
+                    1
+                  </Text>
+                )}
+              </>
             )}
             right={props => (
               <View
@@ -227,6 +234,23 @@ export const SettingsPage = () => {
                     flexDirection: "row",
                   },
                 ]}>
+                {expanded ? null : (
+                  <>
+                    <Text fontSize={20} style={{ textAlignVertical: "center" }}>
+                      12:30{"  "}
+                    </Text>
+                    <Text
+                      bold
+                      fontSize={20}
+                      style={{ textAlignVertical: "center" }}>
+                      to{" "}
+                    </Text>
+                    <Text fontSize={20} style={{ textAlignVertical: "center" }}>
+                      12:30{"         "}
+                    </Text>
+                  </>
+                )}
+
                 <Text
                   bold
                   fontSize={20}
@@ -243,50 +267,52 @@ export const SettingsPage = () => {
                   On
                 </Button>
               </View>
-            )}></List.Accordion>
-          <View
-            style={[
-              {
-                backgroundColor: "white",
-                // borderWidth: 1,
-                flexDirection: "row",
-                padding: "2%",
-              },
-            ]}>
-            <Select
-              height={"8"}
-              selectedValue={service}
-              borderColor="#0094cd"
-              borderWidth={2}
-              placeholderTextColor="blue.900"
-              minWidth="60"
-              w={140}
-              accessibilityLabel="Choose Service"
-              placeholder="Set Threshold"
-              _selectedItem={{
-                bg: "teal.600",
-                endIcon: <CheckIcon size="5" />,
-              }}
-              mt={1}
-              onValueChange={itemValue => setService(itemValue)}>
-              <Select.Item label="UX Research" value="ux" />
-              <Select.Item label="Web Development" value="web" />
-              <Select.Item label="Cross Platform Development" value="cross" />
-              <Select.Item label="UI Designing" value="ui" />
-              <Select.Item label="Backend Development" value="backend" />
-            </Select>
+            )}>
             <View
               style={[
                 {
+                  backgroundColor: "white",
+                  // borderWidth: 1,
                   flexDirection: "row",
-                  justifyContent: "space-evenly",
-                  flex: 1,
+                  padding: "2%",
+                  paddingLeft: "1%",
                 },
               ]}>
-              <Text bold>From: 14:34 </Text>
-              <Text bold>To: 15:56 </Text>
-            </View>
-            {/* <View
+              <Select
+                rounded={10}
+                height={"8"}
+                selectedValue={service}
+                borderColor={colors.plusButton}
+                borderWidth={2}
+                placeholderTextColor="blue.900"
+                minWidth="60"
+                w={140}
+                accessibilityLabel="Choose Service"
+                placeholder="Set Threshold"
+                _selectedItem={{
+                  bg: "teal.600",
+                  endIcon: <CheckIcon size="5" />,
+                }}
+                mt={1}
+                onValueChange={itemValue => setService(itemValue)}>
+                <Select.Item label="UX Research" value="ux" />
+                <Select.Item label="Web Development" value="web" />
+                <Select.Item label="Cross Platform Development" value="cross" />
+                <Select.Item label="UI Designing" value="ui" />
+                <Select.Item label="Backend Development" value="backend" />
+              </Select>
+              <View
+                style={[
+                  {
+                    flexDirection: "row",
+                    justifyContent: "space-evenly",
+                    flex: 1,
+                  },
+                ]}>
+                <Text bold>From: 14:34 </Text>
+                <Text bold>To: 15:56 </Text>
+              </View>
+              {/* <View
               style={[
                 {
                   borderWidth: 1,
@@ -299,7 +325,8 @@ export const SettingsPage = () => {
                 onTrackColor="green.900"
               />
             </View> */}
-          </View>
+            </View>
+          </List.Accordion>
         </List.Section>
       </View>
     </LinearGradient>
