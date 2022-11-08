@@ -88,7 +88,7 @@ export const SettingsPage = () => {
             5 %
           </Text>
           <Select
-            rounded={10}
+            rounded={25}
             borderColor={colors.plusButton}
             borderWidth={2}
             placeholderTextColor="blue.900"
@@ -138,14 +138,15 @@ export const SettingsPage = () => {
             alignItems: "center",
           }}>
           <Button.Group
+            colorScheme={"orange"}
             isAttached
             mx={{
               base: "auto",
               md: 0,
             }}
             size="sm">
-            <Button>GAS</Button>
-            <Button variant="solid">Hybrid</Button>
+            <Button variant="outline">GAS</Button>
+            <Button>Hybrid</Button>
             <Button variant="outline">Electric</Button>
           </Button.Group>
         </View>

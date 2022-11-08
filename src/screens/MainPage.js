@@ -17,7 +17,7 @@ import { colors } from "../assets/colors/colors"
 import CircularProgress from "react-native-circular-progress-indicator"
 
 export const GensetHome = () => {
-  const [random, setRandom] = useState("10")
+  const [random, setRandom] = useState("70")
 
   // setRandom(Math.floor(Math.random() * 100))
 
@@ -160,14 +160,16 @@ export const GensetHome = () => {
               ]}>
               <CircularProgress
                 value={random}
+                title={"degree C"}
+                titleColor={"#ffff"}
                 activeStrokeColor={"#e87c13"}
                 activeStrokeSecondaryColor={"#a50606"}
                 inActiveStrokeColor={"#ffff"}
-                inActiveStrokeOpacity={0.1}
+                inActiveStrokeOpacity={0.8}
                 colotit
                 activeStrokeWidth={16}
                 radius={heightPercentageToDP("9%")}
-                progressValueColor={"#e87c13"}
+                progressValueColor={"#ffff"}
               />
             </View>
           </View>

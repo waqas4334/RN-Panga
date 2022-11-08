@@ -36,9 +36,10 @@ export const colors = {
   tabBar: "#ffffffff",
   // background: '#0471A6',
   background: "coral",
-  plusButton: "#245fb4",
+  // plusButton: "#1453ae",
+  plusButton: "#1453ae",
   // plusButtonReal: "#a50606",
-  plusButtonReal: "#cf2625",
+  plusButtonReal: "#cc4c0d",
   orange: "#ea4335",
   modesColor: "#0094cd",
 }
