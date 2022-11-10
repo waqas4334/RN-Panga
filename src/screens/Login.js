@@ -5,6 +5,7 @@ import {
   SafeAreaView,
   Linking,
   ImageBackground,
+  TextInput,
 } from "react-native"
 import {
   Pressable,
@@ -28,13 +29,15 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen"
+import { scale, verticalScale, moderateScale } from "react-native-size-matters"
+
 import { Lock, Mail, Key, User, Eye, EyeOff } from "react-native-feather"
 import * as Animatable from "react-native-animatable"
 import { colors } from "../assets/colors/colors"
 
 export const Login = ({ navigation }) => {
   //  const dispatch = useDispatch()
-
+  const [geyserIdModal, setGeyserIdModal] = useState("")
   const [data, setData] = useState({
     Email: null,
     password: null,
@@ -44,6 +47,7 @@ export const Login = ({ navigation }) => {
   const [show, setShow] = useState(true)
   const [modalVisible, setModalVisible] = useState(false)
   const [registermodalVisible, setRegisterModalVisible] = useState(false)
+  const [manualModalVisible, setManualModalVisible] = useState(false)
   const isValidEmail = email => {
     let re =
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -111,8 +115,9 @@ export const Login = ({ navigation }) => {
               <Image
                 source={require("../assets/images/Geysital.png")}
                 alt="Alternate Text"
-                width={"35%"}
-                height={hp("19%")}
+                // width={scale(125)}
+                // height={verticalScale(125)}
+                size={scale(110)}
               />
               <Text fontSize={["2xl", "4xl"]} color={colors.mainColor} bold>
                 Geysital{" "}
@@ -322,7 +327,7 @@ export const Login = ({ navigation }) => {
               colorScheme="darkBlue"
               onPress={() => {
                 setModalVisible(false)
-                navigation.navigate("signup")
+                setManualModalVisible(true)
               }}>
               Manual Register
             </Button>
@@ -337,6 +342,46 @@ export const Login = ({ navigation }) => {
                 navigation.navigate("qrscanner")
               }}>
               Scan QR Code
+            </Button>
+          </Modal.Footer>
+        </Modal.Content>
+      </Modal>
+
+      <Modal
+        isOpen={manualModalVisible}
+        onClose={() => setManualModalVisible(false)}
+        justifyContent="center"
+        size="lg">
+        <Modal.Content>
+          <Modal.CloseButton />
+          <Modal.Header>Manual Register</Modal.Header>
+          <Modal.Body>
+            <FormControl mt="3">
+              <FormControl.Label>Enter Geyser Id</FormControl.Label>
+              <TextInput
+                style={{
+                  borderWidth: 1,
+                  borderRadius: 5,
+                  paddingVertical: moderateScale(5),
+                  paddingLeft: moderateScale(5),
+                }}
+                keyboardType={"number-pad"}
+                onChangeText={text => setGeyserIdModal(text)}
+              />
+            </FormControl>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button
+              flex="1"
+              colorScheme="darkBlue"
+              onPress={() => {
+                setModalVisible(false)
+
+                geyserIdModal == ""
+                  ? alert("please write id")
+                  : navigation.navigate("signup")
+              }}>
+              Proceed to Register
             </Button>
           </Modal.Footer>
         </Modal.Content>

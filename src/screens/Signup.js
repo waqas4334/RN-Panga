@@ -42,6 +42,7 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen"
 import * as Animatable from "react-native-animatable"
+import { scale, verticalScale, moderateScale } from "react-native-size-matters"
 
 //Start
 export const Signup = ({ navigation }) => {
@@ -197,8 +198,7 @@ export const Signup = ({ navigation }) => {
             <Image
               source={require("../assets/images/Geysital.png")}
               alt="Alternate Text"
-              width={wp("35%")}
-              height={hp("19%")}
+              size={scale(120)}
             />
             <Text fontSize={["2xl", "4xl"]} color={colors.mainColor} bold>
               Geysital{" "}
@@ -510,7 +510,7 @@ export const Signup = ({ navigation }) => {
                       <Text color={"#FF0000"}>write proper board Id </Text>
                     ) : null}
                   </Stack>
-                  <HStack space={2}>
+                  {/* <HStack space={2}>
                     <Box flexDirection="row" alignItems="flex-end">
                       <Database
                         stroke="black"
@@ -535,7 +535,7 @@ export const Signup = ({ navigation }) => {
                           : setData({ isValidGeyserId: false })
                       }
                     />
-                  </HStack>
+                  </HStack> */}
 
                   <Stack>
                     {data.isValidGeyserId === false ? (

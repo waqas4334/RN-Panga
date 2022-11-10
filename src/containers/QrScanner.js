@@ -37,10 +37,13 @@ export const QrScanner = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+      {/* <View style={styles.barcodebox}> */}
       <BarCodeScanner
         onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
         style={StyleSheet.absoluteFillObject}
       />
+      {/* </View> */}
+
       {scanned && (
         <Button title={"Tap to Scan Again"} onPress={() => setScanned(false)} />
       )}
@@ -51,18 +54,20 @@ export const QrScanner = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "column",
     justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#ecf0f1",
   },
-  //   barcodebox: {
-  //     alignItems: "center",
-  //     justifyContent: "center",
-  //     height: scale(300),
-  //     width: verticalScale(300),
-  //     overflow: "hidden",
-  //     borderRadius: 30,
-  //     backgroundColor: "tomato",
-  //   },
+  barcodebox: {
+    alignItems: "center",
+    justifyContent: "center",
+    height: scale(300),
+    width: verticalScale(300),
+    overflow: "hidden",
+    borderRadius: 30,
+    borderWidth: 1,
+    backgroundColor: "#1e72c5",
+  },
   //   mainText: {
   //     fontSize: scale(20),
   //     marginTop: verticalScale(10),
