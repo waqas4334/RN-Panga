@@ -45,7 +45,10 @@ import * as Animatable from "react-native-animatable"
 import { scale, verticalScale, moderateScale } from "react-native-size-matters"
 
 //Start
-export const Signup = ({ navigation }) => {
+export const Signup = ({ navigation, route }) => {
+  //getting geyser Id from route parsms
+  const { geyrserModalId } = route.params
+
   //state for input fields validation
   const [data, setData] = useState({
     // input fields

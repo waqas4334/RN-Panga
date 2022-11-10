@@ -379,7 +379,9 @@ export const Login = ({ navigation }) => {
 
                 geyserIdModal == ""
                   ? alert("please write id")
-                  : navigation.navigate("signup")
+                  : navigation.navigate("signup", {
+                      geyrserModalId: geyserIdModal,
+                    })
               }}>
               Proceed to Register
             </Button>
