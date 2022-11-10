@@ -1,5 +1,11 @@
-
-import { StyleSheet, View, StatusBar, SafeAreaView, Linking, ImageBackground } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  StatusBar,
+  SafeAreaView,
+  Linking,
+  ImageBackground,
+} from "react-native"
 import {
   Pressable,
   Input,
@@ -16,16 +22,15 @@ import {
   Divider,
   Modal,
   FormControl,
-
-} from 'native-base';
-import React, { useState } from 'react';
+} from "native-base"
+import React, { useState } from "react"
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
-} from 'react-native-responsive-screen';
-import { Lock, Mail, Key, User, Eye, EyeOff } from 'react-native-feather';
-import * as Animatable from 'react-native-animatable';
-import { colors } from '../assets/colors/colors';
+} from "react-native-responsive-screen"
+import { Lock, Mail, Key, User, Eye, EyeOff } from "react-native-feather"
+import * as Animatable from "react-native-animatable"
+import { colors } from "../assets/colors/colors"
 
 export const Login = ({ navigation }) => {
   //  const dispatch = useDispatch()
@@ -35,99 +40,84 @@ export const Login = ({ navigation }) => {
     password: null,
     isValidEmail: true,
     isInValidPassword: false,
-  });
-  const [show, setShow] = useState(true);
-  const [modalVisible, setModalVisible] = useState(false);
+  })
+  const [show, setShow] = useState(true)
+  const [modalVisible, setModalVisible] = useState(false)
+  const [registermodalVisible, setRegisterModalVisible] = useState(false)
   const isValidEmail = email => {
-    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    console.log('REGIX: ' + email);
-    return re.test(email);
-  };
+    let re =
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    console.log("REGIX: " + email)
+    return re.test(email)
+  }
   const validatePassord = text => {
     if (text.trim().length >= 7) {
       setData({
         ...data,
         isInValidPassword: false,
         password: text,
-      });
+      })
     } else {
       setData({
         ...data,
         isInValidPassword: true,
-      });
+      })
     }
-  };
+  }
   const handeSubmit = () => {
-    console.log('Pressed', data.Email, data.password);
-    if ((data.Email === null || data.Email === undefined) && (data.password === null || data.password === undefined)) {
-      setData(
-        {
-          ...data,
-          isValidEmail: false,
-          isInValidPassword: true,
-        }
-      )
-    }
-    else if (data.Email === null || data.Email === undefined) {
-      setData(
-        {
-          ...data,
-          isValidEmail: false,
-        }
-      )
-    }
-    else if (data.password === null || data.password === undefined) {
-      setData(
-        {
-          ...data,
-          isInValidPassword: true,
-        }
-      )
-    }
-    else {
-
-      console.log('+++++++++++++++++++++++++++', data.Email, data.password)
+    console.log("Pressed", data.Email, data.password)
+    if (
+      (data.Email === null || data.Email === undefined) &&
+      (data.password === null || data.password === undefined)
+    ) {
+      setData({
+        ...data,
+        isValidEmail: false,
+        isInValidPassword: true,
+      })
+    } else if (data.Email === null || data.Email === undefined) {
+      setData({
+        ...data,
+        isValidEmail: false,
+      })
+    } else if (data.password === null || data.password === undefined) {
+      setData({
+        ...data,
+        isInValidPassword: true,
+      })
+    } else {
+      console.log("+++++++++++++++++++++++++++", data.Email, data.password)
     }
   }
   return (
     <>
       <SafeAreaView style={styles.AreaView}>
         <Stack flex={1}>
-
-          <ImageBackground source={require('../assets/images/background.jpeg.jpg')} style={{ width: '100%', height: '100%' }}
-            blurRadius={5}
-          >
-
-
+          <ImageBackground
+            source={require("../assets/images/background.jpeg.jpg")}
+            style={{ width: "100%", height: "100%" }}
+            blurRadius={5}>
             <Animatable.View
               style={{
                 // borderWidth: 1,
                 borderColor: "black",
                 justifyContent: "center",
                 alignItems: "center",
-                marginTop: hp("2%")
-
+                marginTop: hp("2%"),
               }}
               animation="bounceIn"
               duration={3000}
-              delay={500}
-
-            >
-
+              delay={500}>
               <Image
-                source={require('../assets/images/Geysital.png')}
+                source={require("../assets/images/Geysital.png")}
                 alt="Alternate Text"
                 width={"35%"}
-                height={hp('19%')}
-
+                height={hp("19%")}
               />
-              <Text fontSize={['2xl', '4xl']} color={colors.mainColor} bold>
-                Geysital{' '}
+              <Text fontSize={["2xl", "4xl"]} color={colors.mainColor} bold>
+                Geysital{" "}
               </Text>
-
             </Animatable.View>
-
-
 
             <Animatable.View
               animation="fadeInUp"
@@ -138,17 +128,14 @@ export const Login = ({ navigation }) => {
                 borderColor: colors.mainColor,
                 flex: 1,
                 margin: "4%",
-                borderRadius: 40,
+                borderRadius: 20,
                 padding: "4%",
                 // backgroundColor:"white",
                 // elevation:0.5,
                 // shadowColor:colors.mainColor
-              }}
-
-            >
-
-              <Stack space={8} w={'100%'}>
-                <Text bold color={colors.mainColor} fontSize={['2xl', '5xl']}>
+              }}>
+              <Stack space={8} w={"100%"}>
+                <Text bold color={colors.mainColor} fontSize={["2xl", "5xl"]}>
                   Login
                 </Text>
                 <Stack space={[4, 12]}>
@@ -160,22 +147,21 @@ export const Login = ({ navigation }) => {
                       variant="underlined"
                       placeholder="Email"
                       placeholderTextColor={"black"}
-
                       w="90%"
                       onChangeText={t =>
                         t !== null && isValidEmail(t)
                           ? setData({
-                            ...data,
-                            isValidEmail: true,
-                            Email: t,
-                          })
+                              ...data,
+                              isValidEmail: true,
+                              Email: t,
+                            })
                           : setData({ isValidEmail: false })
                       }
                     />
                   </HStack>
-                  <Stack  >
+                  <Stack>
                     {data.isValidEmail === false ? (
-                      <Text color={'#FF0000'}>Enter Valid Email </Text>
+                      <Text color={"#FF0000"}>Enter Valid Email </Text>
                     ) : null}
                   </Stack>
                   <HStack space={2}>
@@ -183,9 +169,8 @@ export const Login = ({ navigation }) => {
                       <Lock stroke="black" width={25} height={25} />
                     </Box>
                     <Input
-                      type={show ? 'password' : 'text'}
+                      type={show ? "password" : "text"}
                       variant="underlined"
-
                       placeholder="Password i.e min 7 characters"
                       placeholderTextColor={"black"}
                       w="90%"
@@ -215,9 +200,9 @@ export const Login = ({ navigation }) => {
                       }
                     />
                   </HStack>
-                  <Stack >
+                  <Stack>
                     {data.isInValidPassword ? (
-                      <Text color={'#FF0000'}>Enter Valid Password</Text>
+                      <Text color={"#FF0000"}>Enter Valid Password</Text>
                     ) : null}
                   </Stack>
                 </Stack>
@@ -226,13 +211,13 @@ export const Login = ({ navigation }) => {
                 <HStack justifyContent="flex-end">
                   <Text
                     onPress={() => {
-                      setModalVisible(!modalVisible);
+                      setModalVisible(!modalVisible)
                     }}
                     italic
                     bold
-                    fontSize={['sm', 'xl']}
+                    fontSize={["sm", "xl"]}
                     color={colors.textColor1}
-                    mt={['2%', '4%']}>
+                    mt={["2%", "4%"]}>
                     Forgot Password?
                   </Text>
                 </HStack>
@@ -243,7 +228,7 @@ export const Login = ({ navigation }) => {
                   <Button
                     onPress={() => handeSubmit()}
                     mx="3"
-                    mt={['1%', '3%']}
+                    mt={["1%", "3%"]}
                     colorScheme="darkBlue">
                     LogIn
                   </Button>
@@ -252,29 +237,26 @@ export const Login = ({ navigation }) => {
                       italic
                       bold
                       color={colors.darkBlue}
-                      fontSize={['md', '2xl']}>
+                      fontSize={["md", "2xl"]}>
                       OR
                     </Text>
                   </Center>
                   <Center>
                     <Text
-                      onPress={() => navigation.navigate('signup')}
+                      onPress={() => setRegisterModalVisible(true)}
                       color={colors.mainColor}
                       bold
-                      fontSize={['lg', '2xl']}>
-                      New to Geysital?{' '}
-                      <Text fontSize={['md', '2xl']} color={colors.textColor1}>
+                      fontSize={["lg", "2xl"]}>
+                      New to Geysital?{" "}
+                      <Text fontSize={["md", "2xl"]} color={colors.textColor1}>
                         Register
                       </Text>
                     </Text>
                   </Center>
                 </Stack>
               </Stack>
-              <Stack flex={1} justifyContent="flex-end" alignItems="center" >
-
-                <Text color={colors.mainColor} bold fontSize={['lg', '2xl']}
-
-                >
+              <Stack flex={1} justifyContent="flex-end" alignItems="center">
+                <Text color={colors.mainColor} bold fontSize={["lg", "2xl"]}>
                   FAQs and Operations Guide
                 </Text>
 
@@ -289,14 +271,10 @@ export const Login = ({ navigation }) => {
                   color={colors.mainColor} bold fontSize={['lg', '2xl']}>
                   Powered By Sync & Secure
                 </Text> */}
-
               </Stack>
-
             </Animatable.View>
           </ImageBackground>
-
         </Stack>
-
       </SafeAreaView>
       <Modal
         isOpen={modalVisible}
@@ -318,16 +296,54 @@ export const Login = ({ navigation }) => {
               flex="1"
               colorScheme="darkBlue"
               onPress={() => {
-                setModalVisible(false);
+                setModalVisible(false)
               }}>
               Proceed
             </Button>
           </Modal.Footer>
         </Modal.Content>
       </Modal>
+
+      <Modal
+        isOpen={registermodalVisible}
+        onClose={() => setRegisterModalVisible(false)}
+        justifyContent="center"
+        size="lg">
+        <Modal.Content>
+          <Modal.CloseButton />
+          <Modal.Header>Register New User !</Modal.Header>
+          <Modal.Body>
+            Select the type of Registeration
+            <FormControl mt="3"></FormControl>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button
+              flex="1"
+              colorScheme="darkBlue"
+              onPress={() => {
+                setModalVisible(false)
+                navigation.navigate("signup")
+              }}>
+              Manual Register
+            </Button>
+
+            <Button
+              ml={"2%"}
+              flex="1"
+              colorScheme="darkBlue"
+              onPress={() => {
+                setModalVisible(false)
+
+                navigation.navigate("qrscanner")
+              }}>
+              Scan QR Code
+            </Button>
+          </Modal.Footer>
+        </Modal.Content>
+      </Modal>
     </>
-  );
-};
+  )
+}
 const styles = StyleSheet.create({
   AreaView: {
     flex: 1,
@@ -345,4 +361,4 @@ const styles = StyleSheet.create({
   border: {
     // borderWidth: 1,
   },
-});
+})
