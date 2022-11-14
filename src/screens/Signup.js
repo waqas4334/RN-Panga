@@ -48,7 +48,7 @@ import { scale, verticalScale, moderateScale } from "react-native-size-matters"
 export const Signup = ({ navigation, route }) => {
   //getting geyser Id from route parsms
   const { geyrserModalId } = route.params
-
+  // alert(geyrserModalId)
   //state for input fields validation
   const [data, setData] = useState({
     // input fields

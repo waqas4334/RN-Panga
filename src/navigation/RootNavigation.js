@@ -66,7 +66,7 @@ const App = () => {
 export const RootNavigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName={navigationStrings.drawerMainPage}>
+      <Stack.Navigator initialRouteName={navigationStrings.Login}>
         <Stack.Screen
           name={navigationStrings.Login}
           component={Screens.Login}

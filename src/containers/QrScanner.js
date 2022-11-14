@@ -1,6 +1,8 @@
-import { Text, View, StyleSheet, Button } from "react-native"
+import { Text, View, StyleSheet } from "react-native"
 import React, { useState, useEffect } from "react"
 import { BarCodeScanner } from "expo-barcode-scanner"
+import { useToast, Center, NativeBaseProvider, Button } from "native-base"
+
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -10,7 +12,9 @@ import { scale, verticalScale, moderateScale } from "react-native-size-matters"
 export const QrScanner = ({ navigation }) => {
   const [hasPermission, setHasPermission] = useState(null)
   const [scanned, setScanned] = useState(false)
+  const [scannedData, setScannedData] = useState()
 
+  const toast = useToast()
   useEffect(() => {
     const getBarCodeScannerPermissions = async () => {
       const { status } = await BarCodeScanner.requestPermissionsAsync()
@@ -22,10 +26,15 @@ export const QrScanner = ({ navigation }) => {
 
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true)
+
     alert(`${data} has been scanned!`)
-    setTimeout(() => {
-      navigation.navigate("signup")
-    }, 2000)
+
+    setScannedData(data)
+    // setTimeout(() => {
+    //   navigation.navigate("signup", {
+    //     geyrserModalId: data,
+    //   })
+    // }, 1000)
   }
 
   if (hasPermission === null) {
@@ -43,9 +52,13 @@ export const QrScanner = ({ navigation }) => {
         style={StyleSheet.absoluteFillObject}
       />
       {/* </View> */}
-
+      {() =>
+        toast.show({
+          description: "Hello world",
+        })
+      }
       {scanned && (
-        <Button title={"Tap to Scan Again"} onPress={() => setScanned(false)} />
+        <Button onPress={() => setScanned(false)}>click to scan again</Button>
       )}
     </View>
   )
